@@ -1,0 +1,222 @@
+EXCEPTION STACK:
+
+
+  Exception: java.lang.RuntimeException
+    Message: Exception assembling root component of page user/Register: Exception assembling embedded component 'layout' (of type com.imatia.webapp.web.components.Layout, within user/Register): Could not convert 'message:menu-users' into a component parameter binding: Unable to read message catalog from context:WEB-INF/app.properties: java.io.FileNotFoundException: C:\Users\Casa\workspace\imatia-web\src\main\webapp\WEB-INF\app.properties (El sistema no puede encontrar el archivo especificado)
+
+  Exception: org.apache.tapestry5.ioc.internal.OperationException
+    Message: Exception assembling embedded component 'layout' (of type com.imatia.webapp.web.components.Layout, within user/Register): Could not convert 'message:menu-users' into a component parameter binding: Unable to read message catalog from context:WEB-INF/app.properties: java.io.FileNotFoundException: C:\Users\Casa\workspace\imatia-web\src\main\webapp\WEB-INF\app.properties (El sistema no puede encontrar el archivo especificado)
+   location: classpath:com/imatia/webapp/web/pages/user/RegisterUser.tml, line 2
+      trace: Handling traditional 'action' component event request for user/Register:registrationform.
+             Constructing instance of page class com.imatia.webapp.web.pages.user.RegisterUser
+             Assembling root component for page user/Register
+             Assembling component user/Register:layout (com.imatia.webapp.web.components.Layout)
+
+  Exception: org.apache.tapestry5.ioc.internal.util.TapestryException
+    Message: Exception assembling embedded component 'layout' (of type com.imatia.webapp.web.components.Layout, within user/Register): Could not convert 'message:menu-users' into a component parameter binding: Unable to read message catalog from context:WEB-INF/app.properties: java.io.FileNotFoundException: C:\Users\Casa\workspace\imatia-web\src\main\webapp\WEB-INF\app.properties (El sistema no puede encontrar el archivo especificado)
+   location: classpath:com/imatia/webapp/web/pages/user/RegisterUser.tml, line 2
+
+  Exception: org.apache.tapestry5.ioc.internal.util.TapestryException
+    Message: Could not convert 'message:menu-users' into a component parameter binding: Unable to read message catalog from context:WEB-INF/app.properties: java.io.FileNotFoundException: C:\Users\Casa\workspace\imatia-web\src\main\webapp\WEB-INF\app.properties (El sistema no puede encontrar el archivo especificado)
+   location: classpath:com/imatia/webapp/web/components/Layout.tml, line 41
+
+  Exception: java.lang.RuntimeException
+    Message: Unable to read message catalog from context:WEB-INF/app.properties: java.io.FileNotFoundException: C:\Users\Casa\workspace\imatia-web\src\main\webapp\WEB-INF\app.properties (El sistema no puede encontrar el archivo especificado)
+
+  Exception: java.io.FileNotFoundException
+    Message: C:\Users\Casa\workspace\imatia-web\src\main\webapp\WEB-INF\app.properties (El sistema no puede encontrar el archivo especificado)
+
+  Stack trace:
+
+  - java.io.FileInputStream.open0(Native Method)
+  - java.io.FileInputStream.open(FileInputStream.java:195)
+  - java.io.FileInputStream.<init>(FileInputStream.java:138)
+  - java.io.FileInputStream.<init>(FileInputStream.java:93)
+  - sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:90)
+  - sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:188)
+  - java.net.URL.openStream(URL.java:1045)
+  - org.apache.tapestry5.ioc.internal.util.AbstractResource.openStream(AbstractResource.java:304)
+  - org.apache.tapestry5.internal.services.messages.PropertiesFileParserImpl.parsePropertiesFile(PropertiesFileParserImpl.java:52)
+  - $PropertiesFileParser_182d0222cc6b.parsePropertiesFile(Unknown Source)
+  - org.apache.tapestry5.internal.services.MessagesSourceImpl.readProperties(MessagesSourceImpl.java:214)
+  - org.apache.tapestry5.internal.services.MessagesSourceImpl.getRawProperties(MessagesSourceImpl.java:191)
+  - org.apache.tapestry5.internal.services.MessagesSourceImpl.findBundleProperties(MessagesSourceImpl.java:152)
+  - org.apache.tapestry5.internal.services.MessagesSourceImpl.findBundleProperties(MessagesSourceImpl.java:148)
+  - org.apache.tapestry5.internal.services.MessagesSourceImpl.buildMessages(MessagesSourceImpl.java:116)
+  - org.apache.tapestry5.internal.services.MessagesSourceImpl.getMessages(MessagesSourceImpl.java:107)
+  - org.apache.tapestry5.internal.services.ComponentMessagesSourceImpl.getMessages(ComponentMessagesSourceImpl.java:120)
+  - $ComponentMessagesSource_182d0222cc6e.advised$getMessages_182d0222cc72(Unknown Source)
+  - $ComponentMessagesSource_182d0222cc6e$Invocation_getMessages_182d0222cc71.proceedToAdvisedMethod(Unknown Source)
+  - org.apache.tapestry5.internal.plastic.AbstractMethodInvocation.proceed(AbstractMethodInvocation.java:90)
+  - org.apache.tapestry5.ioc.internal.services.LazyAdvisorImpl$1$1.createObject(LazyAdvisorImpl.java:70)
+  - org.apache.tapestry5.ioc.internal.services.CachingObjectCreator.cacheValueFromDelegate(CachingObjectCreator.java:64)
+  - org.apache.tapestry5.ioc.internal.services.CachingObjectCreator.createObject(CachingObjectCreator.java:46)
+  - $Messages_182d0222cc95.delegate(Unknown Source)
+  - $Messages_182d0222cc95.get(Unknown Source)
+  - org.apache.tapestry5.internal.bindings.MessageBindingFactory.newBinding(MessageBindingFactory.java:32)
+  - $BindingFactory_182d0222cc8b.newBinding(Unknown Source)
+  - org.apache.tapestry5.internal.services.BindingSourceImpl.newBinding(BindingSourceImpl.java:81)
+  - $BindingSource_182d0222cc4f.newBinding(Unknown Source)
+  - org.apache.tapestry5.internal.services.PageElementFactoryImpl.newExpansionElement(PageElementFactoryImpl.java:161)
+  - $PageElementFactory_182d0222cc78.newExpansionElement(Unknown Source)
+  - org.apache.tapestry5.internal.pageload.PageLoaderImpl$15.execute(PageLoaderImpl.java:1042)
+  - org.apache.tapestry5.internal.pageload.ComponentAssemblerImpl.runActions(ComponentAssemblerImpl.java:229)
+  - org.apache.tapestry5.internal.pageload.ComponentAssemblerImpl.access$300(ComponentAssemblerImpl.java:37)
+  - org.apache.tapestry5.internal.pageload.ComponentAssemblerImpl$2.run(ComponentAssemblerImpl.java:180)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.run(OperationTrackerImpl.java:56)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.run(PerThreadOperationTracker.java:60)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.run(RegistryImpl.java:1254)
+  - org.apache.tapestry5.internal.pageload.ComponentAssemblerImpl.assembleEmbeddedComponent(ComponentAssemblerImpl.java:158)
+  - org.apache.tapestry5.internal.pageload.PageLoaderImpl$12.execute(PageLoaderImpl.java:963)
+  - org.apache.tapestry5.internal.pageload.ComponentAssemblerImpl.runActions(ComponentAssemblerImpl.java:229)
+  - org.apache.tapestry5.internal.pageload.ComponentAssemblerImpl.performAssembleRootComponent(ComponentAssemblerImpl.java:105)
+  - org.apache.tapestry5.internal.pageload.ComponentAssemblerImpl.access$000(ComponentAssemblerImpl.java:37)
+  - org.apache.tapestry5.internal.pageload.ComponentAssemblerImpl$1.invoke(ComponentAssemblerImpl.java:81)
+  - org.apache.tapestry5.internal.pageload.ComponentAssemblerImpl$1.invoke(ComponentAssemblerImpl.java:78)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1260)
+  - org.apache.tapestry5.internal.pageload.ComponentAssemblerImpl.assembleRootComponent(ComponentAssemblerImpl.java:76)
+  - org.apache.tapestry5.internal.pageload.PageLoaderImpl$3.invoke(PageLoaderImpl.java:197)
+  - org.apache.tapestry5.internal.pageload.PageLoaderImpl$3.invoke(PageLoaderImpl.java:190)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1260)
+  - org.apache.tapestry5.internal.pageload.PageLoaderImpl.loadPage(PageLoaderImpl.java:189)
+  - $PageLoader_182d0222cc62.loadPage(Unknown Source)
+  - org.apache.tapestry5.internal.services.PageSourceImpl.getPage(PageSourceImpl.java:104)
+  - $PageSource_182d0222cc61.getPage(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestPageCacheImpl.get(RequestPageCacheImpl.java:86)
+  - $RequestPageCache_182d0222cc60.get(Unknown Source)
+  - $RequestPageCache_182d0222cc5b.get(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentSourceImpl.getPage(ComponentSourceImpl.java:83)
+  - $ComponentSource_182d0222cc4e.getPage(Unknown Source)
+  - com.imatia.webapp.web.services.AuthenticationValidator.checkForPage(AuthenticationValidator.java:24)
+  - com.imatia.webapp.web.services.ComponentEventAuthenticationFilter.handle(ComponentEventAuthenticationFilter.java:39)
+  - $ComponentEventRequestHandler_182d0222ccdd.handle(Unknown Source)
+  - $ComponentEventRequestHandler_182d0222cc58.handle(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentRequestHandlerTerminator.handleComponentEvent(ComponentRequestHandlerTerminator.java:43)
+  - org.apache.tapestry5.internal.services.DeferredResponseRenderer.handleComponentEvent(DeferredResponseRenderer.java:45)
+  - $ComponentRequestHandler_182d0222cc5a.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.services.InitializeActivePageName.handleComponentEvent(InitializeActivePageName.java:39)
+  - $ComponentRequestHandler_182d0222cc5a.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker$1.perform(RequestOperationTracker.java:55)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker$1.perform(RequestOperationTracker.java:52)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.perform(OperationTrackerImpl.java:110)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.perform(PerThreadOperationTracker.java:84)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.perform(RegistryImpl.java:1266)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker.handleComponentEvent(RequestOperationTracker.java:47)
+  - $ComponentRequestHandler_182d0222cc5a.handleComponentEvent(Unknown Source)
+  - $ComponentRequestHandler_182d0222cc32.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentEventDispatcher.dispatch(ComponentEventDispatcher.java:48)
+  - $Dispatcher_182d0222cc34.dispatch(Unknown Source)
+  - $Dispatcher_182d0222cc23.dispatch(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$RequestHandlerTerminator.service(TapestryModule.java:305)
+  - com.imatia.webapp.web.services.SessionFilter.service(SessionFilter.java:71)
+  - $RequestHandler_182d0222cc24.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestErrorFilter.service(RequestErrorFilter.java:26)
+  - $RequestHandler_182d0222cc24.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$3.service(TapestryModule.java:846)
+  - $RequestHandler_182d0222cc24.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$2.service(TapestryModule.java:836)
+  - $RequestHandler_182d0222cc24.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.StaticFilesFilter.service(StaticFilesFilter.java:89)
+  - $RequestHandler_182d0222cc24.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:105)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:95)
+  - org.apache.tapestry5.ioc.internal.util.ConcurrentBarrier.withRead(ConcurrentBarrier.java:83)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter.service(CheckForUpdatesFilter.java:119)
+  - $RequestHandler_182d0222cc24.service(Unknown Source)
+  - $RequestHandler_182d0222cc17.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$HttpServletRequestHandlerTerminator.service(TapestryModule.java:256)
+  - org.apache.tapestry5.internal.gzip.GZipFilter.service(GZipFilter.java:59)
+  - $HttpServletRequestHandler_182d0222cc19.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.IgnoredPathsFilter.service(IgnoredPathsFilter.java:62)
+  - $HttpServletRequestFilter_182d0222cc14.service(Unknown Source)
+  - $HttpServletRequestHandler_182d0222cc19.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$1.service(TapestryModule.java:796)
+  - $HttpServletRequestHandler_182d0222cc19.service(Unknown Source)
+  - $HttpServletRequestHandler_182d0222cc13.service(Unknown Source)
+  - org.apache.tapestry5.TapestryFilter.doFilter(TapestryFilter.java:166)
+  - org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1668)
+  - org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+  - org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+  - org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+  - org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:226)
+  - org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1180)
+  - org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+  - org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+  - org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1112)
+  - org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+  - org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:213)
+  - org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:119)
+  - org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+  - org.eclipse.jetty.server.Server.handle(Server.java:524)
+  - org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+  - org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+  - org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+  - org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+  - org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+  - org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+  - org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+  - org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+  - org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+  - org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+  - java.lang.Thread.run(Thread.java:745)
+
+REQUEST:
+
+Basic Information:
+
+                contextPath: /imatia-web
+                     method: POST
+                       path: /user/register.registrationform
+                     locale: es_ES
+                 serverName: localhost
+                 remoteHost: 0:0:0:0:0:0:0:1
+
+Headers:
+
+                     Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+            Accept-Encoding: gzip, deflate
+            Accept-Language: es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3
+              Cache-Control: max-age=0
+                 Connection: keep-alive
+             Content-Length: 469
+               Content-Type: application/x-www-form-urlencoded
+                        DNT: 1
+                       Host: localhost:9090
+  Upgrade-Insecure-Requests: 1
+                 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+
+Parameters:
+                 enPassword: hecto
+             retypePassword: hector
+                 t:formdata: o9/vKtunvjyU0sU8Ii2CB1X5jAI=:H4sIAAAAAAAAAJWOMUoDURCGx0BADFgIiqJgo+3bxjRapbEKErJ4gNm34/pk895zZtZNGo/iCcRLpEjnHXIAWysLsypCECIp5+eb7/+f36BdH8BeJcTJkAonSnzeXB5HBMLQDVwYjGhvyShGEuVJ19jAVLrMZChketkiRKuXjsr8JCWt4un1tDPfnX20YKMPHRu8ciivFkqFnf4dPmBSoi+SVNn54mIcFTab0oZYPae37pwBB0siaZWNnIgLfvqSn928P722AMaxPoT95TLyEUXqwDnIPTwCKGyRH/xkK/kGb9fHcLRMMOkk0h/r9nf+a/7v78v+CaiRDnKwAQAA
+                   userName: hector
+
+SYSTEM INFORMATION:
+
+Memory:
+      537.455.520 bytes free
+      635.961.344 bytes total
+      954.728.448 bytes max
+
+17 Threads:
+                                                                               Reference Handler WAITING, daemon, priority 10
+                                                                                       Finalizer WAITING, daemon, priority 8
+                                                                               Signal Dispatcher RUNNABLE, daemon, priority 9
+                                                                                 Attach Listener RUNNABLE, daemon
+                                                                                            main WAITING
+                                                             Abandoned connection cleanup thread TIMED_WAITING, daemon
+                                                                                 qtp892611887-13 TIMED_WAITING
+                                                                                 qtp892611887-14 TIMED_WAITING
+                                                                                 qtp892611887-15 RUNNABLE
+  qtp892611887-16-acceptor-0@3323288d-ServerConnector@43756cb{HTTP/1.1,[http/1.1]}{0.0.0.0:9090} RUNNABLE, priority 3
+                                                                                 qtp892611887-17 TIMED_WAITING
+                                                                                 qtp892611887-18 TIMED_WAITING
+*                                                                                qtp892611887-19 RUNNABLE
+                                                                                 qtp892611887-20 RUNNABLE
+                                                             Abandoned connection cleanup thread TIMED_WAITING, daemon
+                               org.eclipse.jetty.server.session.HashSessionManager@49ede9c7Timer TIMED_WAITING, daemon
+                                                                                 Console scanner TIMED_WAITING, daemon

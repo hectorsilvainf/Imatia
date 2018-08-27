@@ -1,0 +1,45 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	t:type="Layout" t:title="title" showTitleInBody="false">
+	
+	<p class="text-center lead">${message:login}</p>
+	
+	<br/>
+
+	<form t:type="Form" class="form-horizontal" t:id="loginForm" role="form">
+	
+	   <t:errors/>
+		
+	   <div class="form-group">        
+	        <t:label for="userName" class="col-md-offset-3 col-md-2"/>
+	        <div class="col-md-3">
+           	    <input t:id="userName" t:type="TextField"
+			           t:validate="required" maxlength="30"/>
+			</div>
+	   </div>
+	    
+	   <div class="form-group">        
+	        <t:label for="enPassword" class="col-md-offset-3 col-md-2"/>
+	        <div class="col-md-3">
+                <input t:id="enPassword" t:type="PasswordField"
+			           t:validate="required" maxlength="8"/>
+            </div>
+	    </div>
+	     <div class="form-group">
+            <div class="col-md-offset-5 col-md-3">
+                <div class="checkbox">
+                	<label for="rememberMyPassword">
+                		<input t:type="Checkbox" t:id="rememberMyPassword"/> ${message:rememberMyPassword-label}
+                    	<p class="help-block">${message:rememberMyPassword-help}</p>
+                    </label>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="form-group">
+	    	<div class="col-md-offset-5 col-md-1">
+        		<button type="submit" class="btn btn-primary">${message:submit}</button>
+        	</div>
+        </div> 
+	    
+	</form>
+
+</html>

@@ -1,0 +1,268 @@
+EXCEPTION STACK:
+
+
+          Exception: org.apache.tapestry5.runtime.ComponentEventException
+            Message: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+            context: org.apache.tapestry5.internal.EmptyEventContext@35932200
+          eventType: action
+           location: classpath:com/imatia/webapp/web/pages/task/CreateTask.tml, line 8
+
+          Exception: org.apache.tapestry5.ioc.internal.OperationException
+            Message: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+           location: classpath:com/imatia/webapp/web/pages/task/CreateTask.tml, line 8
+              trace: Handling traditional 'action' component event request for task/Create:createtaskform.
+                     Triggering event 'action' on task/Create:createtaskform
+                     Triggering event 'validate' on task/Create:createtaskform
+
+          Exception: org.apache.tapestry5.runtime.ComponentEventException
+            Message: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+            context: org.apache.tapestry5.internal.EmptyEventContext@35932200
+          eventType: validate
+           location: classpath:com/imatia/webapp/web/pages/task/CreateTask.tml, line 8
+
+          Exception: org.springframework.dao.DataIntegrityViolationException
+            Message: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+  mostSpecificCause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'done' cannot be null
+          rootCause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'done' cannot be null
+
+          Exception: org.hibernate.exception.ConstraintViolationException
+            Message: could not execute statement
+                SQL: n/a
+           SQLState: 23000
+          errorCode: 1048
+
+          Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException
+            Message: Column 'done' cannot be null
+           SQLState: 23000
+          errorCode: 1048
+
+  Stack trace:
+
+  - sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+  - sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+  - sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+  - java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+  - com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+  - com.mysql.jdbc.Util.getInstance(Util.java:387)
+  - com.mysql.jdbc.SQLError.createSQLException(SQLError.java:934)
+  - com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3966)
+  - com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3902)
+  - com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2526)
+  - com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2673)
+  - com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2549)
+  - com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1861)
+  - com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2073)
+  - com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2009)
+  - com.mysql.jdbc.PreparedStatement.executeLargeUpdate(PreparedStatement.java:5098)
+  - com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1994)
+  - org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:204)
+  - org.hibernate.dialect.identity.GetGeneratedKeysDelegate.executeAndExtract(GetGeneratedKeysDelegate.java:57)
+  - org.hibernate.id.insert.AbstractReturningDelegate.performInsert(AbstractReturningDelegate.java:42)
+  - org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2907)
+  - org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3478)
+  - org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:81)
+  - org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:623)
+  - org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:277)
+  - org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:258)
+  - org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:303)
+  - org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:318)
+  - org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:275)
+  - org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:182)
+  - org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:113)
+  - org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.saveWithGeneratedOrRequestedId(DefaultSaveOrUpdateEventListener.java:192)
+  - org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.entityIsTransient(DefaultSaveOrUpdateEventListener.java:177)
+  - org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.performSaveOrUpdate(DefaultSaveOrUpdateEventListener.java:97)
+  - org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.onSaveOrUpdate(DefaultSaveOrUpdateEventListener.java:73)
+  - org.hibernate.internal.SessionImpl.fireSaveOrUpdate(SessionImpl.java:651)
+  - org.hibernate.internal.SessionImpl.saveOrUpdate(SessionImpl.java:643)
+  - org.hibernate.internal.SessionImpl.saveOrUpdate(SessionImpl.java:638)
+  - com.imatia.webapp.model.util.dao.GenericDaoHibernate.save(GenericDaoHibernate.java:37)
+  - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  - java.lang.reflect.Method.invoke(Method.java:498)
+  - org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+  - org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+  - org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+  - org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+  - org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+  - org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+  - com.sun.proxy.$Proxy265.save(Unknown Source)
+  - com.imatia.webapp.model.taskservice.UserTaskServiceImpl.createTask(UserTaskServiceImpl.java:97)
+  - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  - java.lang.reflect.Method.invoke(Method.java:498)
+  - org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+  - org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+  - org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+  - org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+  - org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+  - org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+  - org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+  - org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+  - com.sun.proxy.$Proxy268.createTask(Unknown Source)
+  - com.imatia.webapp.web.pages.task.CreateTask.onValidateFromCreateTaskForm(CreateTask.java:46)
+  - com.imatia.webapp.web.pages.task.CreateTask.dispatchComponentEvent(CreateTask.java)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.dispatchEvent(ComponentPageElementImpl.java:917)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.processEventTriggering(ComponentPageElementImpl.java:1102)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.access$3100(ComponentPageElementImpl.java:57)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1047)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1044)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1260)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementResourcesImpl.invoke(ComponentPageElementResourcesImpl.java:154)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.triggerContextEvent(ComponentPageElementImpl.java:1043)
+  - org.apache.tapestry5.internal.structure.InternalComponentResourcesImpl.triggerContextEvent(InternalComponentResourcesImpl.java:288)
+  - org.apache.tapestry5.corelib.components.Form.fireValidateEvent(Form.java:673)
+  - org.apache.tapestry5.corelib.components.Form.onAction(Form.java:522)
+  - org.apache.tapestry5.corelib.components.Form.dispatchComponentEvent(Form.java)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.dispatchEvent(ComponentPageElementImpl.java:917)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.processEventTriggering(ComponentPageElementImpl.java:1102)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.access$3100(ComponentPageElementImpl.java:57)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1047)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1044)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1260)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementResourcesImpl.invoke(ComponentPageElementResourcesImpl.java:154)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.triggerContextEvent(ComponentPageElementImpl.java:1043)
+  - org.apache.tapestry5.internal.services.ComponentEventRequestHandlerImpl.handle(ComponentEventRequestHandlerImpl.java:73)
+  - org.apache.tapestry5.internal.services.AjaxFilter.handle(AjaxFilter.java:42)
+  - $ComponentEventRequestHandler_b270ea13c586.handle(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$37.handle(TapestryModule.java:2216)
+  - $ComponentEventRequestHandler_b270ea13c586.handle(Unknown Source)
+  - com.imatia.webapp.web.services.ComponentEventAuthenticationFilter.handle(ComponentEventAuthenticationFilter.java:68)
+  - $ComponentEventRequestHandler_b270ea13c586.handle(Unknown Source)
+  - $ComponentEventRequestHandler_b270ea13c57f.handle(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentRequestHandlerTerminator.handleComponentEvent(ComponentRequestHandlerTerminator.java:43)
+  - org.apache.tapestry5.internal.services.DeferredResponseRenderer.handleComponentEvent(DeferredResponseRenderer.java:45)
+  - $ComponentRequestHandler_b270ea13c581.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.services.InitializeActivePageName.handleComponentEvent(InitializeActivePageName.java:39)
+  - $ComponentRequestHandler_b270ea13c581.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker$1.perform(RequestOperationTracker.java:55)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker$1.perform(RequestOperationTracker.java:52)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.perform(OperationTrackerImpl.java:110)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.perform(PerThreadOperationTracker.java:84)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.perform(RegistryImpl.java:1266)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker.handleComponentEvent(RequestOperationTracker.java:47)
+  - $ComponentRequestHandler_b270ea13c581.handleComponentEvent(Unknown Source)
+  - $ComponentRequestHandler_b270ea13c554.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentEventDispatcher.dispatch(ComponentEventDispatcher.java:48)
+  - $Dispatcher_b270ea13c556.dispatch(Unknown Source)
+  - $Dispatcher_b270ea13c544.dispatch(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$RequestHandlerTerminator.service(TapestryModule.java:305)
+  - com.imatia.webapp.web.services.SessionFilter.service(SessionFilter.java:71)
+  - $RequestHandler_b270ea13c545.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestErrorFilter.service(RequestErrorFilter.java:26)
+  - $RequestHandler_b270ea13c545.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$3.service(TapestryModule.java:846)
+  - $RequestHandler_b270ea13c545.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$2.service(TapestryModule.java:836)
+  - $RequestHandler_b270ea13c545.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.StaticFilesFilter.service(StaticFilesFilter.java:89)
+  - $RequestHandler_b270ea13c545.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:105)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:95)
+  - org.apache.tapestry5.ioc.internal.util.ConcurrentBarrier.withRead(ConcurrentBarrier.java:83)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter.service(CheckForUpdatesFilter.java:119)
+  - $RequestHandler_b270ea13c545.service(Unknown Source)
+  - $RequestHandler_b270ea13c538.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$HttpServletRequestHandlerTerminator.service(TapestryModule.java:256)
+  - org.apache.tapestry5.internal.gzip.GZipFilter.service(GZipFilter.java:59)
+  - $HttpServletRequestHandler_b270ea13c53a.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.IgnoredPathsFilter.service(IgnoredPathsFilter.java:62)
+  - $HttpServletRequestFilter_b270ea13c535.service(Unknown Source)
+  - $HttpServletRequestHandler_b270ea13c53a.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$1.service(TapestryModule.java:796)
+  - $HttpServletRequestHandler_b270ea13c53a.service(Unknown Source)
+  - $HttpServletRequestHandler_b270ea13c534.service(Unknown Source)
+  - org.apache.tapestry5.TapestryFilter.doFilter(TapestryFilter.java:166)
+  - org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1668)
+  - org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+  - org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+  - org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+  - org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:226)
+  - org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1180)
+  - org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+  - org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+  - org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1112)
+  - org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+  - org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:213)
+  - org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:119)
+  - org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+  - org.eclipse.jetty.server.Server.handle(Server.java:524)
+  - org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+  - org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+  - org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+  - org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+  - org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+  - org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+  - org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+  - org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+  - org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+  - org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+  - java.lang.Thread.run(Thread.java:745)
+
+REQUEST:
+
+Basic Information:
+
+                contextPath: /imatia-web
+                      flags: requestedSessionIdValid
+                     method: POST
+                       path: /task/create.createtaskform
+                     locale: es_ES
+                 serverName: localhost
+                 remoteHost: 0:0:0:0:0:0:0:1
+
+Headers:
+
+                     Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+            Accept-Encoding: gzip, deflate
+            Accept-Language: es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3
+                 Connection: keep-alive
+             Content-Length: 343
+               Content-Type: application/x-www-form-urlencoded
+                     Cookie: JSESSIONID=e00giuqjk37f15ctfto5c0ru0
+                        DNT: 1
+                       Host: localhost:9090
+                    Referer: http://localhost:9090/imatia-web/task/create
+  Upgrade-Insecure-Requests: 1
+                 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+
+Parameters:
+                 t:formdata: iO1HfkCPFTcGXF/k3TBgjImhW6I=:H4sIAAAAAAAAAFvzloG1XJxBpCSxOFvfuSg1sSTVCsTOS8xNZSguYjDNL0rXSyxITM5I1StJLEgtLimqNNVLzi9KzclM0ktKLE7Vc0wCCiYml7hlpuakqASnlpQWqIYe5n4oevwPEwOjDwN3cn5eSVF+jh/QyBIGIZ+sxLJE/ZzEvHT94JKizLx064qCEgYOkKUgFfgc40iqYwKK8pNTi4uDS5NyM4uLM/PzDq9LMUn7Nu8cEwNDRQEAzDye3/wAAAA=
+                   taskName: Nueva Tarea
+
+SESSION:
+
+    sso:com.imatia.webapp.web.util.UserSession: com.imatia.webapp.web.util.UserSession@700ac401
+  sso:org.apache.tapestry5.alerts.AlertStorage: org.apache.tapestry5.alerts.AlertStorage@6311098e
+
+SYSTEM INFORMATION:
+
+Memory:
+      396.167.752 bytes free
+      639.631.360 bytes total
+      954.728.448 bytes max
+
+17 Threads:
+                                                                                Reference Handler WAITING, daemon, priority 10
+                                                                                        Finalizer WAITING, daemon, priority 8
+                                                                                Signal Dispatcher RUNNABLE, daemon, priority 9
+                                                                                  Attach Listener RUNNABLE, daemon
+                                                                                             main WAITING
+                                                              Abandoned connection cleanup thread TIMED_WAITING, daemon
+*                                                                                 qtp311185452-13 RUNNABLE
+                                                                                  qtp311185452-15 RUNNABLE
+                                                                                  qtp311185452-17 TIMED_WAITING
+                                                                                  qtp311185452-18 TIMED_WAITING
+  qtp311185452-19-acceptor-0@457a8e29-ServerConnector@24f177f5{HTTP/1.1,[http/1.1]}{0.0.0.0:9090} RUNNABLE, priority 3
+                                                              Abandoned connection cleanup thread TIMED_WAITING, daemon
+                                                                                  Console scanner TIMED_WAITING, daemon
+                                                                                  qtp311185452-24 TIMED_WAITING
+                                                                                  qtp311185452-27 RUNNABLE
+                                org.eclipse.jetty.server.session.HashSessionManager@6ecdbab8Timer TIMED_WAITING, daemon
+                                                                                  qtp311185452-29 TIMED_WAITING

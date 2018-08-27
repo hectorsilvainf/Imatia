@@ -1,0 +1,54 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+    xmlns:p="tapestry:parameter"
+	t:type="Layout" t:title="title">
+
+	<t:if test="tasks">
+		<!-- Print tasks. -->
+		<t:grid t:source="tasks" t:row="task" class="table table-striped table-hover" 
+			include="taskId,taskName,done" add="edit,delete">
+			<p:editHeader>${message:edit-label}</p:editHeader>
+			<p:taskIdHeader>${message:taskId-label}</p:taskIdHeader>
+			<p:taskNameHeader>${message:taskName-label}</p:taskNameHeader>
+			<p:doneHeader>${message:done-label}</p:doneHeader>
+			<p:deleteHeader>${message:delete-label}</p:deleteHeader>
+			<p:doneCell>
+				<t:if test="task.done"><img src="${asset:context:img/done.png}" width="20" height="20"/>
+				<p:else><img src="${asset:context:img/undone.png}" width="20" height="20"/></p:else>
+				</t:if>
+				
+			</p:doneCell>
+			<p:editCell>
+				<t:actionLink t:id="update" context="[task.taskId,task.done]"><img src="${asset:context:img/edit.png}" width="20" height="20"/></t:actionLink>
+			</p:editCell>
+			<p:taskIdCell><a href="#" t:type="PageLink" t:page="task/TaskDetails" t:context="task.taskId">${task.taskId}</a></p:taskIdCell>
+			<p:deleteCell><t:actionlink t:id="delete" context="task.taskId"><img src="${asset:context:img/borrar.png}" width="20" height="20"/></t:actionlink></p:deleteCell>
+		</t:grid>
+		<!-- "Previous" and "Next" links. -->
+	
+		<ul class="pager">
+		
+			<t:if test="previousLinkContext">
+				<li>
+					<a href="#" t:type="PageLink" t:page="task/findusertasks"
+			   			t:context="previousLinkContext">&larr; ${message:link-previous}</a>
+				</li>
+			</t:if>
+			
+			<li>&nbsp;</li>
+	
+			<t:if test="nextLinkContext">
+				<li>
+					<a href="#" t:type="PageLink" t:page="task/findusertasks"
+			   			t:context="nextLinkContext">${message:link-next} &rarr;</a>
+				</li>
+			</t:if>
+	
+		</ul>
+		<br/>
+		
+
+		<p:else>	
+			<h4 class="alert alert-danger text-center">${message:noTasks}</h4>
+		</p:else>
+</t:if>
+</html>

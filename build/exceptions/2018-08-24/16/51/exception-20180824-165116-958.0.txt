@@ -1,0 +1,141 @@
+EXCEPTION STACK:
+
+
+  Exception: org.apache.tapestry5.ioc.internal.OperationException
+    Message: Page Index did not generate any markup when rendered. This could be because its template file could not be located, or because a render phase method in the page prevented rendering.
+      trace: Handling page render request for page Index
+
+  Exception: java.lang.RuntimeException
+    Message: Page Index did not generate any markup when rendered. This could be because its template file could not be located, or because a render phase method in the page prevented rendering.
+
+  Stack trace:
+
+  - org.apache.tapestry5.internal.services.PageMarkupRendererImpl.renderPageMarkup(PageMarkupRendererImpl.java:51)
+  - $PageMarkupRenderer_177e9186addd.renderPageMarkup(Unknown Source)
+  - org.apache.tapestry5.internal.services.PageResponseRendererImpl.renderPageResponse(PageResponseRendererImpl.java:64)
+  - $PageResponseRenderer_177e9186adb9.renderPageResponse(Unknown Source)
+  - org.apache.tapestry5.internal.services.PageRenderRequestHandlerImpl.handle(PageRenderRequestHandlerImpl.java:72)
+  - org.apache.tapestry5.modules.TapestryModule$34.handle(TapestryModule.java:1974)
+  - $PageRenderRequestHandler_177e9186adbb.handle(Unknown Source)
+  - com.imatia.webapp.web.services.PageRenderAuthenticationFilter.handle(PageRenderAuthenticationFilter.java:41)
+  - $PageRenderRequestHandler_177e9186adbb.handle(Unknown Source)
+  - $PageRenderRequestHandler_177e9186adb5.handle(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentRequestHandlerTerminator.handlePageRender(ComponentRequestHandlerTerminator.java:48)
+  - org.apache.tapestry5.internal.services.DeferredResponseRenderer.handlePageRender(DeferredResponseRenderer.java:52)
+  - $ComponentRequestHandler_177e9186adb6.handlePageRender(Unknown Source)
+  - org.apache.tapestry5.services.InitializeActivePageName.handlePageRender(InitializeActivePageName.java:47)
+  - $ComponentRequestHandler_177e9186adb6.handlePageRender(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker$2.run(RequestOperationTracker.java:73)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.run(OperationTrackerImpl.java:56)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.run(PerThreadOperationTracker.java:60)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.run(RegistryImpl.java:1254)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker.handlePageRender(RequestOperationTracker.java:66)
+  - $ComponentRequestHandler_177e9186adb6.handlePageRender(Unknown Source)
+  - $ComponentRequestHandler_177e9186ad8e.handlePageRender(Unknown Source)
+  - org.apache.tapestry5.internal.services.PageRenderDispatcher.dispatch(PageRenderDispatcher.java:55)
+  - $Dispatcher_177e9186ad90.dispatch(Unknown Source)
+  - $Dispatcher_177e9186ad7f.dispatch(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$RequestHandlerTerminator.service(TapestryModule.java:305)
+  - com.imatia.webapp.web.services.SessionFilter.service(SessionFilter.java:71)
+  - $RequestHandler_177e9186ad80.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestErrorFilter.service(RequestErrorFilter.java:26)
+  - $RequestHandler_177e9186ad80.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$3.service(TapestryModule.java:846)
+  - $RequestHandler_177e9186ad80.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$2.service(TapestryModule.java:836)
+  - $RequestHandler_177e9186ad80.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.StaticFilesFilter.service(StaticFilesFilter.java:89)
+  - $RequestHandler_177e9186ad80.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:105)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:95)
+  - org.apache.tapestry5.ioc.internal.util.ConcurrentBarrier.withRead(ConcurrentBarrier.java:83)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter.service(CheckForUpdatesFilter.java:119)
+  - $RequestHandler_177e9186ad80.service(Unknown Source)
+  - $RequestHandler_177e9186ad73.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$HttpServletRequestHandlerTerminator.service(TapestryModule.java:256)
+  - org.apache.tapestry5.internal.gzip.GZipFilter.service(GZipFilter.java:59)
+  - $HttpServletRequestHandler_177e9186ad75.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.IgnoredPathsFilter.service(IgnoredPathsFilter.java:62)
+  - $HttpServletRequestFilter_177e9186ad70.service(Unknown Source)
+  - $HttpServletRequestHandler_177e9186ad75.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$1.service(TapestryModule.java:796)
+  - $HttpServletRequestHandler_177e9186ad75.service(Unknown Source)
+  - $HttpServletRequestHandler_177e9186ad6f.service(Unknown Source)
+  - org.apache.tapestry5.TapestryFilter.doFilter(TapestryFilter.java:166)
+  - org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1668)
+  - org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+  - org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+  - org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+  - org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:226)
+  - org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1180)
+  - org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+  - org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+  - org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1112)
+  - org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+  - org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:213)
+  - org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:119)
+  - org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+  - org.eclipse.jetty.server.Server.handle(Server.java:524)
+  - org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+  - org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+  - org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+  - org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+  - org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+  - org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+  - org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+  - org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+  - org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+  - org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+  - java.lang.Thread.run(Thread.java:745)
+
+REQUEST:
+
+Basic Information:
+
+                contextPath: /imatia-web
+                     method: GET
+                       path: /
+                     locale: es_ES
+                 serverName: localhost
+                 remoteHost: 0:0:0:0:0:0:0:1
+
+Headers:
+
+                     Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+            Accept-Encoding: gzip, deflate
+            Accept-Language: es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3
+              Cache-Control: max-age=0
+                 Connection: keep-alive
+                     Cookie: JSESSIONID=19ey4xl25ug6e27oz2pdnxrla
+                        DNT: 1
+                       Host: localhost:9090
+                    Referer: http://localhost:9090/
+  Upgrade-Insecure-Requests: 1
+                 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+
+SYSTEM INFORMATION:
+
+Memory:
+      439.072.304 bytes free
+      635.961.344 bytes total
+      954.728.448 bytes max
+
+18 Threads:
+                                                                                 Reference Handler WAITING, daemon, priority 10
+                                                                                         Finalizer WAITING, daemon, priority 8
+                                                                                 Signal Dispatcher RUNNABLE, daemon, priority 9
+                                                                                   Attach Listener RUNNABLE, daemon
+                                                                                              main WAITING
+                                                               Abandoned connection cleanup thread TIMED_WAITING, daemon
+                                                                                  qtp1274036206-13 TIMED_WAITING
+                                                                                  qtp1274036206-14 RUNNABLE
+                                                                                  qtp1274036206-15 RUNNABLE
+*                                                                                 qtp1274036206-16 RUNNABLE
+                                                                                  qtp1274036206-17 TIMED_WAITING
+  qtp1274036206-18-acceptor-0@3c4f2f6d-ServerConnector@7b1d2f65{HTTP/1.1,[http/1.1]}{0.0.0.0:9090} RUNNABLE, priority 3
+                                                                                  qtp1274036206-20 TIMED_WAITING
+                                                               Abandoned connection cleanup thread TIMED_WAITING, daemon
+                                                                                   Console scanner TIMED_WAITING, daemon
+                                                                                  qtp1274036206-24 TIMED_WAITING
+                                                                                  qtp1274036206-25 TIMED_WAITING
+                                 org.eclipse.jetty.server.session.HashSessionManager@55296b50Timer TIMED_WAITING, daemon

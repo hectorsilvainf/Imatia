@@ -1,0 +1,145 @@
+<html xml:space="default" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+    <head>
+        <title>${message:title}</title>
+    </head>
+    <body>
+    
+    	<t:if test="!productionMode"> <!-- Development mode -->
+    
+	        <div class="navbar navbar-inverse navbar-fixed-top">
+	            <div class="container">
+	                <div class="navbar-header">
+	                    <ul class="nav navbar-nav">
+	                        <li>
+	                            <h4 class="navbar-text">Application Exception</h4>
+	                        </li>
+	                        <li class="divider-vertical"/>
+	                        <li>
+	                            <p class="navbar-text">
+	                                Tapestry Version: ${tapestryVersion}
+	                            </p>
+	                        </li>
+	                        <li class="divider-vertical"/>
+	                        <li>
+	                            <p class="navbar-text">
+	                                Application Version: ${applicationVersion}
+	                            </p>
+	                        </li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	
+	        <div class="container">
+	
+	            <div class="panel panel-danger">
+	                <div class="panel-heading">
+	                    <h2 class="panel-title">An exception has occurred processing this request.</h2>
+	                </div>
+	                <div class="panel-body">
+	                    ${rootException.message}
+	                </div>
+	                <t:if test="showActions">
+	
+	                    <div class="panel-footer">
+	
+	                        <div class="btn-toolbar btn-group-xs">
+	                            <t:loop source="actionLinks" value="actionLink">
+	                                <a href="${actionLink.uri}" class="btn btn-default">
+	                                    <t:outputRaw value="actionLink.label"/>
+	                                </a>
+	                            </t:loop>
+	
+	                        </div>
+	                    </div>
+	                    <t:if test="showReload">
+	                        <div class="panel-footer">
+	                            <p><strong>with reload</strong>: Force a reload of component
+	                                classes. This is often necessary
+	                                after fixing a class that previously failed to compile due to errors.
+	                            </p>
+	                        </div>
+	                    </t:if>
+	                </t:if>
+	            </div>
+	
+	            <t:if test="! productionMode">
+	
+	                <t:exceptiondisplay exception="rootException"/>
+	
+	                <h3>Request</h3>
+	                <t:renderobject object="request"/>
+	
+	                <t:if test="hasSession">
+	                    <h2>Session</h2>
+	                    <dl>
+	                        <t:loop source="session.attributeNames" value="attributeName">
+	                            <dt>${attributeName}</dt>
+	                            <dd>
+	                                <t:renderobject object="attributeValue"/>
+	                            </dd>
+	                        </t:loop>
+	                    </dl>
+	                </t:if>
+	
+	                <h3>Threads</h3>
+	
+	                <table class="table table-condensed table-hover table-striped exception-report-threads">
+	                    <thead>
+	                        <tr>
+	                            <th>Thread Name</th>
+	                            <th>Group Name</th>
+	                            <th>State</th>
+	                            <th>Flags</th>
+	                        </tr>
+	                    </thead>
+	                    <tbody>
+	                        <tr t:type="loop" source="threads" value="thread" class="${thread.className}">
+	                            <td class="thread-name">${thread.name}</td>
+	                            <td>${thread.group?.name}</td>
+	                            <td>${thread.state}</td>
+	                            <td>${thread.flags}</td>
+	                        </tr>
+	                    </tbody>
+	                </table>
+	
+	
+	                <h3>System Properties</h3>
+	                <dl>
+	                    <t:loop source="systemProperties" value="propertyName">
+	                        <dt>${propertyName}</dt>
+	                        <dd>
+	                            <t:if test="! complexProperty">
+	                                ${propertyValue}
+	                                <p:else>
+	                                    <ul>
+	                                        <li t:type="loop" source="complexPropertyValue" value="var:path">
+	                                            ${var:path}
+	                                        </li>
+	                                    </ul>
+	                                </p:else>
+	                            </t:if>
+	                        </dd>
+	                    </t:loop>
+	                </dl>
+	            </t:if>
+	        </div>
+
+	        <p:else> <!-- Production Mode -->
+					
+				<div class="container">
+					
+				    <div class="alert alert-danger" role="alert">
+			       		<h1 class="text-center">${message:title}</h1>
+			       		<p>${message:click} <a href="#" t:type="PageLink" t:page="index">MiniPortal</a> ${message:toReturnToMainPage}</p>
+			    	</div>
+					
+				</div>
+	
+		    </p:else>
+        
+    	</t:if>
+
+    </body>
+
+</html>

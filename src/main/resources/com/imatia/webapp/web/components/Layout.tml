@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+<head>
+    <meta charset="utf-8" />
+    <title>${title} - Imatia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="${context:css/mystyles.css}" rel="stylesheet" type="text/css"/>
+	<link rel="shortcut icon" href="${asset:context:img/faviconrojo2.png}"/>
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+    <div class="container">
+    
+	    <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" t:type="PageLink" t:page="index">
+				<img src="${asset:context:img/LogoImatiaretina.png}" style="width: 113px; height: 35px; " alt="Imatia Icon"/>
+			</a>
+        </div>
+        
+        <div class="navbar-collapse collapse">
+        
+            <ul class="nav navbar-nav">
+            	
+              	<li class="dropdown">
+                	<a href="#" class="dropdown-toggle" data-toggle="dropdown">${message:menu-tasks} <span class="caret"></span></a>
+                	<ul class="dropdown-menu" role="menu">
+                  		<li><a href="#" t:type="PageLink" t:page="task/FindAllTasks">${message:menu-tasks-searchall}</a></li>
+                  		<t:if test="userSession">
+                  			<li><a href="#" t:type="PageLink" t:page="task/FindUserTasks" >${message:menu-tasks-searchusertasks}</a></li>
+                  		</t:if>
+                  		<li class="divider"></li>
+                  		
+                  		<li><a href="#" t:type="ActionLink" t:id="addTask" >${message:menu-tasks-create}</a></li>
+                  		
+                  		
+                  		
+                	</ul>
+              	</li>
+            </ul>
+            
+            <ul class="nav navbar-nav navbar-right">
+            	  
+            	<li class="dropdown">
+                	<a href="#" class="dropdown-toggle" data-toggle="dropdown">${message:menu-languages} <span class="caret"></span></a>
+                	<ul class="dropdown-menu" role="menu">
+                  		<li><a href="#" t:type="actionLink"  t:id="language">${message:menu-language-english}</a></li>
+                  		<li><a href="#" t:type="actionLink"  t:id="language2"> ${message:menu-language-spanish}</a></li>
+                	</ul>
+              	</li>
+            
+              	<li class="dropdown">
+                	<a href="#" class="dropdown-toggle" data-toggle="dropdown">${message:menu-users} <span class="caret"></span></a>
+                	<ul class="dropdown-menu" role="menu">
+                		<t:if test="!userSession">
+	                  		<li><a href="#" t:type="PageLink" t:page="user/RegisterUser" >${message:menu-users-register}</a></li>
+	                  		<li><a href="#" t:type="PageLink" t:page="user/LoginUser" >${message:menu-users-login}</a></li>
+                  		</t:if>
+                  		<t:if test="userSession">
+                  			<li><a href="#" t:type="PageLink" t:page="user/UserDetails">${message:menu-users-profile}</a></li>
+                  			<li><a href="#" t:type="ActionLink" t:id="logout" >${message:menu-preferences-exitSession} (${userSession.userName})</a></li>
+                  		</t:if>
+                	</ul>
+              	</li>
+            </ul>
+
+        </div>
+        
+    </div>
+    
+</div>
+
+<div class="container">
+	
+	<t:if test="showTitleInBody">
+		<h3 class="text-center">${title}</h3>
+		<br/>
+	</t:if>
+	
+    <t:body/>
+
+    <hr/>
+
+    <footer>
+        <p class="text-center col-sm-12 margin-footer">${message:footer}</p>
+    </footer>
+
+</div>
+
+</body>
+
+</html>

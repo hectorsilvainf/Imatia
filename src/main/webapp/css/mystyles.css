@@ -1,0 +1,48 @@
+.navbar-inverse{
+	background-image: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 100%) !important;
+	border-color: #F1F1F1 !important;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+	color:#000000 !important;
+	font-size:16px !important;
+
+}
+
+.navbar-inverse .navbar-nav .open > a {
+	color:#FFFFFF !important;
+}
+
+.dropdown-menu {
+	font-size:16px !important;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .active > a{
+	background-image: linear-gradient(to bottom, #E4333C 0%, #E4333C 100%) !important;
+}
+#vertical-bar{
+	
+	margin-top: 40px;
+    border-left: 1px solid #aaa;
+    width: 2px;
+    height: 190px;
+}
+.index-margin-top{
+	margin-top:50px;
+}
+
+.margin-footer{
+	margin-top:100px;
+}
+.btn-primary{
+	background-image: linear-gradient(to bottom, #b73346 0%, #88262d 100%) !important;
+}
+.btn-primary:hover{
+	background-color: #872a3d !important;
+    background-position: 0 -15px;
+}
+.btn-primary:focus {
+    background-color: #872a3d !important ;
+    background-position: 0 -15px;
+}
+

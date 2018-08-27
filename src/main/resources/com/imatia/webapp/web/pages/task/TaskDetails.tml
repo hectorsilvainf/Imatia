@@ -1,0 +1,34 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+    xmlns:p="tapestry:parameter"
+	t:type="Layout" t:title="title">
+	
+	<t:if test="task">
+	<table class="table table-striped table-hover">	
+		<tbody>
+	        <tr>
+	            <th>${message:taskId-label}</th>
+	            <td>${task.taskId}</td>
+	        </tr>
+	        <tr>
+	            <th>${message:taskName-label}</th>
+	            <td>${task.taskName}</td>
+	        </tr> 		
+	        <tr>
+	            <th>${message:userId-label}</th>
+	            <td>${task.userTask.usrId}</td>
+	        </tr>		
+	        <tr>
+	            <th>${message:userName-label}</th>
+	            <td>${userProfile.userName}</td>
+	        </tr>
+	         	
+        </tbody>	
+	</table>
+       	
+	<p:else>
+		<h4 class="alert alert-danger text-center">${message:taskNotFound}</h4>		       		
+	</p:else>
+
+</t:if>
+
+</html>
